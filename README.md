@@ -1,4 +1,5 @@
-![alt text](logo-transparent-png.png)
+![alt text](logo-transparent-png-1.png)
+
 
 # ***SYNERTIA***
 ## **Dynamic Workforce Allocation System (D-WAS)**
