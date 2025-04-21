@@ -20,4 +20,13 @@ const createTask = async(req,res) => {
     }
 };
 
-module.exports = { getTasks, createTask }
+const updateTask = async (req, res) => {
+    try {
+        const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(task);
+    } catch (error) {
+        res.status(500).json({ error: "Task update failed" });
+    }
+};
+
+module.exports = { getTasks, createTask, updateTask }
