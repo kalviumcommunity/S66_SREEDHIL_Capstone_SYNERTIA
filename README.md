@@ -168,3 +168,6 @@
 
 >### ***Milestone 7***
 >***POST API***
+
+>### ***Milestone 8***
+>***PUT API***
