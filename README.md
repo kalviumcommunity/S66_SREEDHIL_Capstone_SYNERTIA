@@ -171,3 +171,6 @@
 
 >### ***Milestone 8***
 >***PUT API***
+
+>### ***Milestone 9***
+>***Database Schema***
