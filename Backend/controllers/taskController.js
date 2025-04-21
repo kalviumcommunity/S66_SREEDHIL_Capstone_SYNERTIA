@@ -9,4 +9,15 @@ const getTasks = async (req, res) => {
     }
 };
 
-module.exports = { getTasks }
+const createTask = async(req,res) => {
+    try {
+        const { title, description, priority } = req.body;
+        const task = new Task({ title, description, priority, assignedTo: req.user.userId });
+        await task.save();
+        res.status(201).json(task);
+    } catch (error) {
+        res.status(500).json({ error: "Task Creation Failed"})
+    }
+};
+
+module.exports = { getTasks, createTask }
