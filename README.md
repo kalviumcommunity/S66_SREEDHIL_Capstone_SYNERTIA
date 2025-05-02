@@ -13,6 +13,7 @@
 
 ### ***Backend :*** https://synertia.onrender.com
 
+### ***Frontend :*** https://synertia.netlify.app/
 ---
 
 ![alt text](Synertia.png)
@@ -203,3 +204,6 @@
 
 >### ***Milestone 13***
 >***Frontend Initialization***
+
+>### ***Milestone 14***
+>***Deploy Frontend***
