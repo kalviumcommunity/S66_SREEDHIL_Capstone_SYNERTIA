@@ -1,3 +1,20 @@
+## **Design**
+
+### ***Low-fidelity Design Link :*** https://www.figma.com/design/rBJQNe5tjdlRif5Jf6dnM3/low-fidelity_Capstone?node-id=0-1&t=6oYonvIbeMB0nGjP-1
+
+### ***Low-fidelity Prototype Link :*** https://www.figma.com/proto/rBJQNe5tjdlRif5Jf6dnM3/low-fidelity_Capstone?node-id=0-1&t=6oYonvIbeMB0nGjP-1
+
+### ***High-fidelity Design Link :*** https://www.figma.com/design/rBJQNe5tjdlRif5Jf6dnM3/low-fidelity_Capstone?node-id=0-1&t=pDZmzxnYFUpj04CB-1
+
+### ***High-fidelity Prototype Link :*** https://www.figma.com/proto/rBJQNe5tjdlRif5Jf6dnM3/low-fidelity_Capstone?node-id=0-1&t=pDZmzxnYFUpj04CB-1
+---
+
+## **Deployed Link**
+
+### ***Backend :*** https://synertia.onrender.com
+
+---
+
 ![alt text](Synertia.png)
 
 # ***SYNERTIA***
@@ -173,10 +190,16 @@
 >***PUT API***
 
 >### ***Milestone 9***
->***Database Schema***
+>***Deploy Backend***
 
 >### ***Milestone 10***
->***Database Read and Write***
+>***Database Schema***
 
 >### ***Milestone 11***
->***Relationship between Entities***
+>***Database Read and Write***
+
+>### ***Milestone 12***
+>***Implement Relationship between entities***
+
+>### ***Milestone 13***
+>***Frontend Initialization***
