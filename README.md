@@ -168,3 +168,15 @@
 
 >### ***Milestone 7***
 >***POST API***
+
+>### ***Milestone 8***
+>***PUT API***
+
+>### ***Milestone 9***
+>***Database Schema***
+
+>### ***Milestone 10***
+>***Database Read and Write***
+
+>### ***Milestone 11***
+>***Relationship between Entities***
