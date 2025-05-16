@@ -216,3 +216,6 @@
 
 >### ***Milestone 14***
 >***Deploy Frontend***
+
+>### ***Milestone 15***
+>***Frontend Components***
