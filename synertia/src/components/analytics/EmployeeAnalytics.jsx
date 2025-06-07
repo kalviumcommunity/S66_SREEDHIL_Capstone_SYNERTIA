@@ -19,39 +19,39 @@ export default function EmployeeAnalytics() {
     ];
 
     return (
-        <div>
-            <h1>Personal Performance Analytics</h1>
+        <div className="space-y-8">
+            <h1 className="text-2xl font-bold mb-6">Personal Performance Analytics</h1>
 
-            <div>
-                <div>
-                    <CheckCircle2/>
-                    <h3>Tasks Completed</h3>
-                    <p>45</p>
-                    <p>This month</p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="bg-indigo-600 text-white p-6 rounded-lg shadow-lg">
+                    <CheckCircle2 className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-semibold">Tasks Completed</h3>
+                    <p className="text-3xl font-bold">45</p>
+                    <p className="text-sm opacity-80">This month</p>
                 </div>
-                <div>
-                    <TrendingUp/>
-                    <h3>Efficiency Rate</h3>
-                    <p>89%</p>
-                    <p>+4% from last month</p>
+                <div className="bg-emerald-600 text-white p-6 rounded-lg shadow-lg">
+                    <TrendingUp className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-semibold">Efficiency Rate</h3>
+                    <p className="text-3xl font-bold">89%</p>
+                    <p className="text-sm opacity-80">+4% from last month</p>
                 </div>
-                <div>
-                    <Clock/>
-                    <h3>Overtime Hours</h3>
-                    <p>8.5h</p>
-                    <p>This month</p>
+                <div className="bg-amber-600 text-white p-6 rounded-lg shadow-lg">
+                    <Clock className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-semibold">Overtime Hours</h3>
+                    <p className="text-3xl font-bold">8.5h</p>
+                    <p className="text-sm opacity-80">This month</p>
                 </div>
-                <div>
-                    <Award/>
-                    <h3>Performance Score</h3>
-                    <p>92</p>
-                    <p>Out of 100</p>
+                <div className="bg-rose-600 text-white p-6 rounded-lg shadow-lg">
+                    <Award className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-semibold">Performance Score</h3>
+                    <p className="text-3xl font-bold">92</p>
+                    <p className="text-sm opacity-80">Out of 100</p>
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <h3>Weekly Performance</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold mb-6">Weekly Performance</h3>
                     <LineChart width={500} height={300} data={personalPerformanceData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="week" />
@@ -64,8 +64,8 @@ export default function EmployeeAnalytics() {
                     </LineChart>
                 </div>
 
-                <div>
-                    <h3>Daily Workload</h3>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold mb-6">Daily Workload</h3>
                     <BarChart width={500} height={300} data={taskBreakdownData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="day" />
@@ -79,39 +79,39 @@ export default function EmployeeAnalytics() {
                 </div>
             </div>
 
-            <div>
-                <h3>Performance Insights</h3>
-                <div>
-                    <div>
-                        <h4>Strengths</h4>
-                        <ul>
-                            <li>
-                                <CheckCircle2/>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-6">Performance Insights</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-lg mb-2">Strengths</h4>
+                        <ul className="space-y-2 text-gray-600">
+                            <li className="flex items-center">
+                                <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
                                 High task completion rate
                             </li>
-                            <li>
-                                <CheckCircle2 />
+                            <li className="flex items-center">
+                                <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
                                 Consistent performance
                             </li>
-                            <li>
-                                <CheckCircle2 />
+                            <li className="flex items-center">
+                                <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
                                 Good time management
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <h4>Areas for Improvement</h4>
-                        <ul>
-                            <li>
-                                <TrendingUp/>
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                        <h4 className="font-semibold text-lg mb-2">Areas for Improvement</h4>
+                        <ul className="space-y-2 text-gray-600">
+                            <li className="flex items-center">
+                                <TrendingUp className="w-5 h-5 text-amber-500 mr-2" />
                                 Reduce overtime hours
                             </li>
-                            <li>
-                                <TrendingUp/>
+                            <li className="flex items-center">
+                                <TrendingUp className="w-5 h-5 text-amber-500 mr-2" />
                                 Balance workload distribution
                             </li>
-                            <li>
-                                <TrendingUp/>
+                            <li className="flex items-center">
+                                <TrendingUp className="w-5 h-5 text-amber-500 mr-2" />
                                 Improve documentation time
                             </li>
                         </ul>

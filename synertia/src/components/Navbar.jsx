@@ -14,41 +14,42 @@ export default function Navbar() {
     };
 
     return (
-        <nav>
-            <div>
-                <div>
-                    <div>
-                        <Users/>
-                        <span>D-WAS System</span>
+        <nav className="bg-indigo-600 text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center">
+                        <Users className="w-8 h-8" />
+                        <span className="ml-2 text-xl font-bold">D-WAS System</span>
                     </div>
 
-                    <div>
+                    <div className="flex items-center space-x-4">
                         <Link
                             to={`/${userRole}`}
-                            className={`${location.pathname === `/${userRole}`
+                            className={`flex items-center px-4 py-2 rounded-md transition-colors ${location.pathname === `/${userRole}`
                                     ? 'bg-indigo-700 text-white'
                                     : 'text-indigo-100 hover:bg-indigo-700'
                                 }`}
                         >
-                            <LayoutDashboard/>
+                            <LayoutDashboard className="w-5 h-5 mr-2" />
                             Dashboard
                         </Link>
 
                         <Link
                             to="/analytics"
-                            className={`${location.pathname === '/analytics'
+                            className={`flex items-center px-4 py-2 rounded-md transition-colors ${location.pathname === '/analytics'
                                     ? 'bg-indigo-700 text-white'
                                     : 'text-indigo-100 hover:bg-indigo-700'
                                 }`}
                         >
-                            <BarChart2/>
+                            <BarChart2 className="w-5 h-5 mr-2" />
                             Analytics
                         </Link>
 
                         <button
                             onClick={handleLogout}
+                            className="flex items-center px-4 py-2 rounded-md bg-indigo-700 hover:bg-indigo-800 transition-colors"
                         >
-                            <LogOut/>
+                            <LogOut className="w-5 h-5 mr-2" />
                             Logout
                         </button>
                     </div>

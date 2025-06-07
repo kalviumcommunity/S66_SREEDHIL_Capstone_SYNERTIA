@@ -95,25 +95,25 @@ export default function ManagerAnalytics() {
                 </div>
             </div>
 
-            <div>
-                <h3>Individual Performance Metrics</h3>
-                <div>
-                    <table>
-                        <thead>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-6">Individual Performance Metrics</h3>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+                        <thead className="bg-gray-50">
                             <tr>
-                                <th>Employee</th>
-                                <th>Tasks Completed</th>
-                                <th>Completion Rate</th>
-                                <th>Overtime Hours</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tasks Completed</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Completion Rate</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Overtime Hours</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="bg-white divide-y divide-gray-200">
                             {employeePerformanceData.map((employee, index) => (
                                 <tr key={index}>
-                                    <td>{employee.name}</td>
-                                    <td>{employee.tasks}</td>
-                                    <td>{employee.completion}%</td>
-                                    <td>{employee.overtime}h</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{employee.name}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.tasks}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.completion}%</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.overtime}h</td>
                                 </tr>
                             ))}
                         </tbody>
