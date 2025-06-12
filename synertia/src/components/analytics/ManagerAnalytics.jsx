@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
-import { Users, TrendingUp, Clock, Award } from 'lucide-react';
+import { Users, TrendingUp, Clock, Award, AlignCenter } from 'lucide-react';
 
 export default function ManagerAnalytics() {
     const teamPerformanceData = [
@@ -77,8 +77,8 @@ export default function ManagerAnalytics() {
                     <PieChart width={400} height={300}>
                         <Pie
                             data={taskDistributionData}
-                            cx={200}
-                            cy={150}
+                            cx={255}
+                            cy={100}
                             innerRadius={60}
                             outerRadius={100}
                             fill="#8884d8"
@@ -86,7 +86,7 @@ export default function ManagerAnalytics() {
                             dataKey="value"
                         >
                             {taskDistributionData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
                             ))}
                         </Pie>
                         <Tooltip />
