@@ -1,9 +1,11 @@
 import React from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export default function Layout() {
     const navigate = useNavigate();
     const location = useLocation();
+    const { logout, userRole } = useAuth();
 
     return (
         <div className="min-h-screen bg-gray-50">

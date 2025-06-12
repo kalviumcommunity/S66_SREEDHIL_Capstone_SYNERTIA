@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { UserCircle, Lock } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
     const [role, setRole] = useState('employee');
+    const { login } = useAuth();
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat px-4 sm:px-6" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}>
