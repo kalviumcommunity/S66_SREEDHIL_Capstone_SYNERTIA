@@ -219,3 +219,9 @@
 
 >### ***Milestone 15***
 >***Frontend Components***
+
+>### ***Milestone 16***
+>***Matching Design***
+
+>### ***Milestone 17***
+>***Authentication***
