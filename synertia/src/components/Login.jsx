@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import { UserCircle, Lock } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
+import jwtDecode from "jwt-decode";
+
 
 export default function Login() {
     const [role, setRole] = useState('employee');
     const { login } = useAuth();
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        googleLogout();
+        // Additional logout logic if needed
+    }
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat px-4 sm:px-6" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}>
             <div className="bg-white bg-opacity-90 rounded-2xl w-full max-w-md p-6 sm:p-8 flex flex-col justify-center items-center">
                 <div className="flex flex-col items-center text-center mb-6">
-                    <img src="logo-transparent-png.png" alt="logo" className="w-20 animate-flip" />
+                    <img src="/logo-transparent-png.png" alt="logo" className="w-20 animate-flip" />
                     <h1 className="font-bold text-xl sm:text-2xl">Welcome to SYNERTIA</h1>
                     <p className="font-bold text-blue-900 text-sm sm:text-base">Dynamic Workforce Assignment System</p>
                 </div>
@@ -80,6 +90,27 @@ export default function Login() {
                         Sign in
                     </button>
                 </form>
+                <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                        console.log("Raw response:", credentialResponse);
+
+                        const decoded = jwtDecode(credentialResponse.credential);
+                        console.log("Decoded user:", decoded);
+
+                        // Save role from dropdown into context
+                        login(role);
+
+                        // Navigate based on selected role
+                        if (role === "employee") {
+                            navigate("/employee");
+                        } else if (role === "manager") {
+                            navigate("/manager");
+                        }
+                    }}
+                    onError={() => {
+                        console.log("Login Failed");
+                    }}
+                />
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ export default function Layout() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
-                            <img src="logo.png" alt="logo" className="w-15 animate-flip invert" />
+                            <img src="/logo.png" alt="logo" className="w-15 animate-flip invert" />
                             <span className="ml-2 text-xl font-bold">SYNERTIA</span>
                         </div>
                         <style>
@@ -34,7 +34,7 @@ export default function Layout() {
                                 className={`px-4 py-2 rounded-md transition-colors ${
                                     location.pathname === `/${userRole}`
                                         ? 'bg-white text-blue-700'
-                                        : 'bg-white text-indigo-700 hover:bg-indigo-100'
+                                        : 'bg-indigo-700 text-white-700 hover:bg-indigo-800 transition-colors hover:cursor-pointer'
                                 }`}
                             >
                                 Dashboard
@@ -43,15 +43,15 @@ export default function Layout() {
                                 onClick={() => navigate('/analytics')}
                                 className={`px-4 py-2 rounded-md transition-colors ${
                                     location.pathname === '/analytics'
-                                        ? 'bg-indigo-700 text-white'
-                                        : 'text-indigo-100 hover:bg-indigo-700'
+                                        ? 'bg-white text-blue-700'
+                                        : 'bg-indigo-700 text-white-700 hover:bg-indigo-800 transition-colors hover:cursor-pointer'
                                 }`}
                             >
                                 Analytics
                             </button>
                             <button
                                 onClick={logout}
-                                className="bg-indigo-700 px-4 py-2 rounded-md hover:bg-indigo-800 transition-colors"
+                                className="bg-indigo-700 px-4 py-2 rounded-md hover:bg-indigo-800 transition-colors hover:cursor-pointer"
                             >
                                 Logout
                             </button>
