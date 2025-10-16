@@ -1,23 +1,33 @@
+// server/src/models/User.js
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
+    username: {
+        type: String,
+        unique: true,
+        sparse: true
     },
-    email:{
-        type:String,
-        unique:true
+    name: {
+        type: String
     },
-    password:{
-        type:String,
-        required:true
+    email: {
+        type: String,
+        unique: true,
+        sparse: true
     },
-    role:{
-        type:String,
-        required:true
+    password: {
+        type: String,
+        required: true
+    },
+    role: {
+        type: String,
+        enum: ["employee", "manager"],
+        default: "employee"
+    },
+    refreshToken: {
+        type: String,
+        default: null
     }
-});
+}, { timestamps: true });
 
-const User = mongoose.model("synertia-user", userSchema);
-module.exports = User
+module.exports = mongoose.model("User", userSchema);
