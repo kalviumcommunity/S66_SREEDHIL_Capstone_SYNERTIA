@@ -1,0 +1,44 @@
+diff --git a/node_modules/buffer-equal-constant-time/index.js b/node_modules/buffer-equal-constant-time/index.js
+index 5462c1f..f2cbd49 100644
+--- a/node_modules/buffer-equal-constant-time/index.js
++++ b/node_modules/buffer-equal-constant-time/index.js
+@@ -3,6 +3,14 @@
+ var Buffer = require('buffer').Buffer; // browserify
+ var SlowBuffer = require('buffer').SlowBuffer;
+ 
++// Polyfill for Node.js v21+ where SlowBuffer is removed
++if (!SlowBuffer) {
++  SlowBuffer = function(size) {
++    return Buffer.allocUnsafe(size);
++  };
++  SlowBuffer.prototype = Buffer.prototype;
++}
++
+ module.exports = bufferEq;
+ 
+ function bufferEq(a, b) {
+@@ -28,14 +36,21 @@ function bufferEq(a, b) {
+ }
+ 
+ bufferEq.install = function() {
+-  Buffer.prototype.equal = SlowBuffer.prototype.equal = function equal(that) {
++  Buffer.prototype.equal = function equal(that) {
+     return bufferEq(this, that);
+   };
++  if (SlowBuffer && SlowBuffer.prototype) {
++    SlowBuffer.prototype.equal = function equal(that) {
++      return bufferEq(this, that);
++    };
++  }
+ };
+ 
+ var origBufEqual = Buffer.prototype.equal;
+-var origSlowBufEqual = SlowBuffer.prototype.equal;
++var origSlowBufEqual = SlowBuffer && SlowBuffer.prototype ? SlowBuffer.prototype.equal : undefined;
+ bufferEq.restore = function() {
+   Buffer.prototype.equal = origBufEqual;
+-  SlowBuffer.prototype.equal = origSlowBufEqual;
++  if (SlowBuffer && SlowBuffer.prototype && origSlowBufEqual) {
++    SlowBuffer.prototype.equal = origSlowBufEqual;
++  }
+ };

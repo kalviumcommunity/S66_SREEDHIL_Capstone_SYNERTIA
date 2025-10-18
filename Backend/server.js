@@ -7,7 +7,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 app.use(cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
@@ -20,7 +20,7 @@ app.use(cookieParser());
 connectDB();
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/otp", require("./routes/otpRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
 app.use("/api/analytics", require("./routes/analyticsRoutes"));
 

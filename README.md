@@ -83,7 +83,7 @@
 >### ***4. Real-time Communication***
 >* ***WebSockets (Socket.io) – Instant updates***
 
->***5. Deployment***
+>### ***5. Deployment***
 >* ***Frontend: Vercel / Netlify***
 >* ***Backend: Render***
 >* ***Database: MongoDB Atlas***

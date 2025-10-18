@@ -4,16 +4,17 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        unique: true,
-        sparse: true
+        required: true,
+        unique: true
     },
     name: {
-        type: String
+        type: String,
+        required: true
     },
     email: {
         type: String,
-        unique: true,
-        sparse: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -27,6 +28,32 @@ const userSchema = new mongoose.Schema({
     refreshToken: {
         type: String,
         default: null
+    },
+    googleId: {
+        type: String,
+        default: null
+    },
+    isGoogleAuth: {
+        type: Boolean,
+        default: false
+    },
+    hasManualPassword: {
+        type: Boolean,
+        default: false
+    },
+    // Profile fields for first-time OAuth users
+    gender: {
+        type: String,
+        enum: ["male", "female", "other", null],
+        default: null
+    },
+    dateOfBirth: {
+        type: Date,
+        default: null
+    },
+    profileCompleted: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
 

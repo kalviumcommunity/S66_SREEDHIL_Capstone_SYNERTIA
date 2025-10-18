@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Clock, AlertCircle, Calendar, ToggleLeft as Toggle, ListTodo } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function EmployeeDashboard() {
+    const { user } = useAuth();
     const [isAvailable, setIsAvailable] = useState(true);
 
     const tasks = [
@@ -22,8 +24,8 @@ export default function EmployeeDashboard() {
         <div className="space-y-6">
             <div className="flex justify-between items-center bg-white p-6 rounded-lg shadow-lg">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Welcome, John Doe</h1>
-                    <p className="text-gray-600">Software Engineer</p>
+                    <h1 className="text-2xl font-bold text-gray-900">Welcome, {user?.name || 'Employee'}</h1>
+                    <p className="text-gray-600">Employee Dashboard</p>
                 </div>
                 <div className="flex items-center space-x-4">
                     <span className="text-sm text-gray-600">Availability Status:</span>
